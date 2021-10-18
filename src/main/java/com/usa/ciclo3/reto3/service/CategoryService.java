@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.usa.ciclo3.reto3.model.Category;
+import com.usa.ciclo3.reto3.model.Computer;
 import com.usa.ciclo3.reto3.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,12 @@ public class CategoryService {
      */
     public List<Category> getAll() {
         return categoryCrudRepository.getAll();
+    }
+
+    public List<Computer> getComputers(int CategoryId) {
+        Optional<Category> optionalCategory = categoryCrudRepository.getCategoryId(CategoryId);
+        Category category = optionalCategory.get();
+        return category.getComputers();
     }
 
     /**

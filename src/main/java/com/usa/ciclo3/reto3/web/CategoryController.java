@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.Optional;
 import com.usa.ciclo3.reto3.model.Category;
+import com.usa.ciclo3.reto3.model.Computer;
 import com.usa.ciclo3.reto3.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,6 +31,11 @@ public class CategoryController {
     @GetMapping("/{id}")
     public Optional<Category>getCategoryId(@PathVariable("id") int id){
         return categoryService.getCategoryId(id);
+    }
+
+    @GetMapping("/computers/{id}")
+    public List<Computer>getCategoryCoputers(@PathVariable("id") int id){
+        return categoryService.getComputers(id);
     }
 
     @PostMapping("/save")
