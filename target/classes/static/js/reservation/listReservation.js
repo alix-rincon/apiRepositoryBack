@@ -39,7 +39,7 @@ function listAllReservations(items) {
                         <td>${items[i].client.name}</td> 
                         <td>${items[i].client.email}</td> 
                         <td>Creado</td>                         
-                        <td style="width:8%"><button type="button" class="btn btn-info btn-sm" onclick="detailMessage(${items[i].idReservation})">Detalle</td>   
+                        <td style="width:8%"><button type="button" class="btn btn-info btn-sm" onclick="detailMessage(${items[i].idReservation})">Editar</td>   
                         <td style="width:8%"><button type="button" class="btn btn-sm btn-outline-dark" onclick="deleteMessage(${items[i].idReservation})">Borrar</td>
                     </tr>
                 </tbody>
@@ -50,7 +50,7 @@ function listAllReservations(items) {
     $("#listado").html(tabla);
 }
 function detailMessage(id){
-    window.location.href="detailMessage.html?id="+id;
+    window.location.href="detailReservation.html?id="+id;
 }
 
 function formatDate(date) {
