@@ -5,7 +5,7 @@ class LayoutMenu extends HTMLElement{
     }
 
     connectedCallback(){
-        let template = fetch('../.././js/layout/layoutMenu.html')
+        let template = fetch('/js/layout/layoutMenu.html')
         .then(response => response.text())
         .then(data => this.innerHTML = data );
     }

@@ -18,7 +18,7 @@ function listAllClients(items) {
                     <tr>
                         <th scope="col">Nombre</th>
                         <th scope="col">Descripción</th>
-                        <th scope="col" colspan=2>Acciones</th>
+                        <th scope="col" colspan=3>Acciones</th>
                     </tr>
                 </thead>`;
 
@@ -27,8 +27,9 @@ function listAllClients(items) {
                     <tr>
                         <td>${items[i].name}</td>
                         <td>${items[i].description}</td>
+                        <td style="width:8%"><button type="button" class="btn btn-primary btn-sm" onclick="detailCategory(${items[i].id})">Editar</td>   
                         <td style="width:17%"><button type="button" class="btn btn-info btn-sm" onclick="listComputer(${items[i].id})">Lista Computadores</td>   
-                        <!--<td style="width:8%"><button type="button" class="btn btn-sm btn-outline-dark" onclick="deleteClient(${items[i].id})">Borrar</td>-->
+                        <td style="width:8%"><button type="button" class="btn btn-sm btn-outline-dark" onclick="deleteCategory(${items[i].id})">Borrar</td>
                     </tr>
                 </tbody>
         `;
@@ -80,6 +81,6 @@ function listComputerByCategory(items){
 
 
 function detailCategory(id) {
-    window.location.href = "../../views/client/detailClient.html?id=" + id;
+    window.location.href = "../../views/category/detailCategory.html?id=" + id;
 }
 listCategory();

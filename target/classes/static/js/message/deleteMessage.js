@@ -1,11 +1,11 @@
 function deleteMessage(id) {
     var datos = {
-        id: id
+        idMessage: id
     }
     let datosPeticion = JSON.stringify(datos);
 
     $.ajax({
-        url: "https://g0cfb8d8089c168-bdrentcar.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/message/message",
+        url: "http://localhost:8080/api/Message/"+id,
         data: datosPeticion,
         type: 'DELETE',
         contentType: "application/JSON",

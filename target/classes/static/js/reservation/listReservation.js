@@ -4,7 +4,6 @@ function listReservation() {
         type: 'GET',
         dataType: 'json',
         success: function (response) {
-            debugger;
             listAllReservations(response);
         },
         error: function (xhr, status) {
@@ -25,7 +24,7 @@ function listAllReservations(items) {
                         <th scope="col">Nombre</th>
                         <th scope="col">Correo</th>
                         <th scope="col">Estado</th>                                            
-                        <!--<th scope="col" colspan=2>Acciones</th>-->
+                        <th scope="col" colspan=2>Acciones</th>
                     </tr>
                 </thead>`;
 
@@ -40,8 +39,8 @@ function listAllReservations(items) {
                         <td>${items[i].client.name}</td> 
                         <td>${items[i].client.email}</td> 
                         <td>Creado</td>                         
-                        <!--<td style="width:8%"><button type="button" class="btn btn-info btn-sm" onclick="detailMessage(${items[i].id})">Detalle</td>   
-                        <td style="width:8%"><button type="button" class="btn btn-sm btn-outline-dark" onclick="deleteMessage(${items[i].id})">Borrar</td>-->
+                        <td style="width:8%"><button type="button" class="btn btn-info btn-sm" onclick="detailMessage(${items[i].idReservation})">Detalle</td>   
+                        <td style="width:8%"><button type="button" class="btn btn-sm btn-outline-dark" onclick="deleteMessage(${items[i].idReservation})">Borrar</td>
                     </tr>
                 </tbody>
         `;

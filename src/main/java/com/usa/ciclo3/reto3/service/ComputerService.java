@@ -32,7 +32,7 @@ public class ComputerService {
     public Optional<Computer> getComputerId(int id) {
         return computadorRepository.getComputerId(id);
     }
-    
+
     /**
      * 
      * @param computer
@@ -91,10 +91,20 @@ public class ComputerService {
      * @return
      */
     public boolean deleteComputerById(int computerId) {
-        Boolean aBoolean = getComputerId(computerId).map(computer -> {
-            computadorRepository.delete(computer);
-            return true;
-        }).orElse(false);
+        Boolean aBoolean = true;
+        Optional<Computer> computer_ = computadorRepository.getComputerId(computerId);
+        if (!computer_.get().getMessages().isEmpty()) {
+            aBoolean = false;
+        }
+        if (!computer_.get().getReservations().isEmpty()) {
+           aBoolean = false;
+        }
+        if(aBoolean){
+            aBoolean = getComputerId(computerId).map(computer -> {
+                computadorRepository.delete(computer);
+                return true;
+            }).orElse(false);
+        }      
         return aBoolean;
     }
 }
