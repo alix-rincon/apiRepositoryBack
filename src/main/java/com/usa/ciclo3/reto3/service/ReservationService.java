@@ -7,9 +7,14 @@ import com.usa.ciclo3.reto3.repository.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * @author: Alix Rincón
+ */
 @Service
 public class ReservationService {
-
+    /**
+     * ReservationRepository Object
+     */
     @Autowired
     private ReservationRepository reservationRepository;
 
