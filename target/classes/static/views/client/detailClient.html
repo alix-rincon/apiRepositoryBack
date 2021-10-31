@@ -37,17 +37,21 @@
             </div>
             <div class="col-md-6">
                 <label for="brand">Nombres</label>
-                <input type="text" class="form-control" id="name" placeholder="Nombres">
+                <input type="text" class="form-control" maxlength="250" id="name" placeholder="Nombres">
             </div>
             <div class="col-md-6">
                 <label for="model">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Email">
+                <input type="email" class="form-control" id="email" placeholder="Email" disabled>
             </div>
             <div class="form-group col-md-6">
                 <label for="model">Edad</label>
                 <input type="number" class="form-control" id="age" placeholder="Edad">
             </div>
             <div class="col-md-6">
+                <label for="inputState">Password</label>
+                <input type="password" id="password" maxlength="45" class="form-control" placeholder="Contraseña" required></select>
+            </div>  
+            <div class="col-md-12">
                 <button type="button" class="btn btn-primary" onclick="editClient()" id="agregar">Editar
                     Cliente</button>
                 <button class="btn btn-outline-secondary" onclick="pageRedirect()" id="closeCreate">Cerrar</button>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/layout/LayoutMenu.js"></script>
+    <script src="/js/reservation/detailReservation.js"></script>
+    <script src="/js/reservation/editReservation.js"></script>
+    <script>
+        function pageRedirect() {
+            window.location.href = "listMessage.html";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <layout-menu></layout-menu><br>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/privado.html">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="listReservation.html">Listar Reserva</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Editar Reserva</li>
+            </ol>
+        </nav>
+        <h3>Formulario Edición Reserva :</h3>
+        <div class="alert alert-success" role="alert" id="alertSuccess" style="display: none;">
+            Registro Creado Exitosamente!
+        </div>
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label for="id"><b>ID:</b></label>
+                <input id="id" class="form-control" disabled></input>
+            </div>
+            <div class="col-md-6">
+                <label for="id"><b>Computador:</b></label>
+                <input id="computerId" class="form-control" disabled></input>
+            </div>
+            <div class="col-md-6">
+                <label for="id"><b>Cliente: </b></label>
+                <input id="clientId" class="form-control" disabled></input>
+            </div>
+            <div class="col-md-6">
+                <label for="name"><b>Fecha de Inicio</b></label>
+                <input type="date" class="form-control" id="dateBegin">
+            </div>
+            <div class="col-md-6">
+                <label for="name"><b>Fecha Fin</b></label>
+                <input type="date" class="form-control" id="endDate" placeholder="YYYY-MM-DD">
+            </div>
+            <div class="col-md-6">
+                <label for="name"><b>Estado</b></label>
+                <select id="statusReservation" class="form-control">
+                    <option value="created">Creado</option>
+                    <option value="Programado">Programado</option>
+                    <option value="cancelado" selected>Cancelado</option>
+                    <option value="Realizado">Realizado</option>
+                </select>
+            </div>
+            <br><br>
+            <div class="col-md-12">
+                <button class="btn btn-primary" onclick="editReservation()">Actualizar Reserva</button>
+                <button class="btn btn-outline-secondary" onclick="pageRedirect()">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

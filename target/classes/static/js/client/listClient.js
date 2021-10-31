@@ -20,7 +20,7 @@ function listAllClients(items) {
                         <th scope="col">Nombres</th>
                         <th scope="col">Email</th>
                         <th scope="col">Edad</th>
-                        <th scope="col" colspan=2>Acciones</th>
+                        <th scope="col" colspan=3>Acciones</th>
                     </tr>
                 </thead>`;
 
@@ -31,6 +31,7 @@ function listAllClients(items) {
                         <td>${items[i].email}</td>
                         <td>${items[i].age}</td>   
                         <td style="width:8%"><button type="button" class="btn btn-info btn-sm" onclick="detailClient(${items[i].idClient})">Editar</td>   
+                        <td style="width:15%"><button type="button" class="btn btn-primary btn-sm" onclick="listReservations(${items[i].idClient})">Listado Reservas</td>   
                         <!--<td style="width:8%"><button type="button" class="btn btn-sm btn-outline-dark" onclick="deleteClient(${items[i].idClient})">Borrar</td>-->
                     </tr>
                 </tbody>

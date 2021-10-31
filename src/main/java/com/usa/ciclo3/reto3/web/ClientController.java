@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.usa.ciclo3.reto3.model.Client;
+import com.usa.ciclo3.reto3.model.Reservation;
 import com.usa.ciclo3.reto3.service.ClientService;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,5 +46,10 @@ public class ClientController {
     public boolean delete(@PathVariable("id") int clientId) {
         return clientService.deleteClientId(clientId);
     }
+
+    @GetMapping("/reservations/{id}")
+    public List<Reservation>getReservationsClient(@PathVariable("id") int id){
+        return clientService.getReservations(id);
+    }     
 
 }
