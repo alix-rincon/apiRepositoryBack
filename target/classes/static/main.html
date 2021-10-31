@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto 4</title>
+    <base href="/"/>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>   
+    <script src="src/main/resources/static/js/layout/LayoutMenu.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <layout-menu></layout-menu><br>
+        <div class="form-outline">
+            <div class="form-row">
+                <div class="form-group col-md-10"></div>
+                <div class="form-group col-md-2">
+                    <a href="/views/computer/createComputer.html" class="btn btn-outline-secondary" role="button">+ Crear
+                        Computador</a>
+                </div>
+            </div>
+        </div>
+        <legend><b>Listado de Computadores</b></legend>
+        <div id="listado"></div>
+    </div>
+</body>
+
+</html>

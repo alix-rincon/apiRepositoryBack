@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Cliente</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/layout/LayoutMenu.js"></script>
+    <script src="/js/category/detailCategory.js"></script>
+    <script src="/js/category/editCategory.js"></script>
+    <script>
+        function pageRedirect() {
+            window.location.href = "listCategory.html";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <layout-menu></layout-menu><br>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/privado.html">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="listCategory.html">Listado de Categorías</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Detalle Categoría</li>
+            </ol>
+        </nav>
+        <h3>Editar Categoría: </h3>
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label for="id">ID</label>
+                <input type="number" disabled readonly class="form-control" id="id">
+            </div>
+            <div class="col-md-6">
+                <label for="brand">Nombre</label>
+                <input type="text" class="form-control" id="name" placeholder="Nombre">
+            </div>
+            <div class="col-md-6">
+                <label for="model">Descripción</label>
+                <textarea id="description" placeholder="Descripción Categoría" class="md-textarea form-control" rows="4" maxlength="250"></textarea>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-6"></div>
+                <button type="button" class="btn btn-primary" onclick="editCategory()" id="agregar">Editar
+                    Categoría</button>
+                <button class="btn btn-outline-secondary" onclick="pageRedirect()" id="closeCreate">Cerrar</button>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
