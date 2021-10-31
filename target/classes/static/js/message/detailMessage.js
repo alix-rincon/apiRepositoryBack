@@ -1,12 +1,13 @@
 function getMessageById(id) { 
     $.ajax({
-        url: "https://g0cfb8d8089c168-bdrentcar.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/message/message/" + id,
+        url: "http://localhost:8080/api/Message/"+id,
         type: 'GET',
         dataType: 'json',
         success: function (response) {
-            var items = response.items;
-            $("#id").val(items[0].id),
-            $("#messagetext").val(items[0].messagetext)
+            console.log(response.computer.name);
+            $("#id").val(response.idMessage),
+            $("#messagetext").val(response.messageText),
+            $("#computerId").val(response.computer.name)
         },
         error: function (xhr, status) {
             console.log(status);

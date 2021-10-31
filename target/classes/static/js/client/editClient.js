@@ -1,16 +1,16 @@
 function editClient() {
     
     var datos = {
-        id: $("#id").val(),
+        idClient: $("#id").val(),
         name: $("#name").val(),
         email: $("#email").val(),
-        age: $("#age").val()
+        age: $("#age").val(),
+        password: $("#password").val()
     }
 
     let datosPeticion = JSON.stringify(datos);
-
     $.ajax({
-        url: "https://g0cfb8d8089c168-bdrentcar.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client",
+        url: "http://localhost:8080/api/Client/update",
         data: datosPeticion,
         type: 'PUT',
         contentType: "application/JSON",

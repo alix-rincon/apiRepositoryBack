@@ -6,20 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="../../js/layout/LayoutMenu.js"></script>
-    <script src="../../js/message/createMessage.js"></script>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/layout/LayoutMenu.js"></script>
+    <script src="/js/message/createMessage.js"></script>
     <script>
         function pageRedirect() {
             window.location.href = "listMessage.html";
@@ -32,7 +23,7 @@
         <layout-menu></layout-menu><br>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="../../index.html">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="/privado.html">Inicio</a></li>
                 <li class="breadcrumb-item"><a href="listMessage.html" .html">Listar Mensajes</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Registrar Mensaje</li>
             </ol>
@@ -41,27 +32,30 @@
         <div class="alert alert-success" role="alert" id="alertSuccess" style="display: none;">
             Registro Creado Exitosamente!
         </div><br>
-        <div class="form-row">
-            <div class="col-md-6 mb-6">
-                <label for="id"><b>Seleccione Computador</b></label>
-                <select id="computerId" class="form-control" required></select>
+        <div class="row g-3">
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <label for="id"><b>Seleccione Computador</b></label>
+                    <select id="computerId" class="form-control" required></select>
+                </div>
             </div>
-            <div class="col-md-6 mb-6">
-                <label for="id"><b>Seleccione Cliente</b></label>
-                <select id="clientId" class="form-control" required></select>
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <label for="id"><b>Seleccione Cliente</b></label>
+                    <select id="clientId" class="form-control" required></select>
+                </div>
             </div>
-        </div><br>
-        <div class="form-row">
-            <label for="name">Mensaje</label>
-            <textarea class="form-control" id="messagetext" rows="3" maxlength="250"></textarea>
-        </div><br>
-        <div class="form-row">
-            <div class="col-md-3 mb-3"></div>
-            <div class="col-md-6 mb-3">
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <label for="name">Mensaje</label>
+                    <textarea class="form-control" id="messagetext" rows="3" maxlength="250"></textarea>
+                </div>
+            </div>
+            <br>
+            <div class="col-md-6">
                 <button class="btn btn-primary" onclick="createMessage()">Registrar Mensaje</button>
                 <button class="btn btn-outline-secondary" onclick="pageRedirect()">Cerrar</button>
             </div>
-            <div class="col-md-3 mb-3"></div>
         </div>
     </div>
 </body>

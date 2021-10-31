@@ -1,11 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <script >
+   <!-- <script >
         window.location.href = "views/computer/listComputer.html";
-    </script>
+    </script>-->
+    <base href="/"/>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>   
 </head>
 <body>
+    <h1>Recursos Humano API</h1>
+    <div class="container unauthenticated">
+        Para iniciar sesión con GitHub <a href="/oauth2/authorization/github">Click Aquí</a>
+    </div>
+    <div class="container authenticated" style="display: none">
+       Autenticado como: <span id="user"></span>
+    </div> 
+
+    <script type="text/javascript">    
+        $.get("/user", function (data) { 
+            $("#user").html(data.name); 
+            $(".unauthenticated").hide() 
+            $(".authenticated").show()  
+        });
+    </script>
 </body>
 
 </html>
