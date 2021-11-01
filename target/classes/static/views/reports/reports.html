@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado Categorías</title>
+    <base href="/" />
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/layout/LayoutMenu.js"></script>    
+    <script src="/js/reports/listReports.js"></script>
+    <script>
+        function menuToggle(id){
+            event.preventDefault();
+            switch (id) {
+                case 1:
+                    $("#conteo-reservas").slideDown();
+                    $("#conteo-reservas-completadas-canceladas").hide();
+                    $("#top-mejores-clientes").hide();
+                    break;
+                case 2:
+                    listReservationByStatus();
+                    $("#conteo-reservas").hide();
+                    $("#conteo-reservas-completadas-canceladas").slideDown();
+                    $("#top-mejores-clientes").hide();
+                    break;
+                case 3:
+                    listReportByClients();
+                    $("#conteo-reservas").hide();
+                    $("#conteo-reservas-completadas-canceladas").hide();
+                    $("#top-mejores-clientes").slideDown();
+                    break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <layout-menu></layout-menu><br>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="privado.html">Inicio</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Reportes</li>
+            </ol>
+        </nav>
+
+        <div class="container mt-3">            
+
+            <a id="menu1" onclick="menuToggle(1)" href="#conteo-reservas" class="btn btn-primary" >Conteo Reservas</a>
+            <a id="menu2" onclick="menuToggle(2)" href="#conteo-reservas-completadas-canceladas" class="btn btn-primary" >Conteo Reservas por Estado</a>
+            <a id="menu3" onclick="menuToggle(3)" href="#top-mejores-clientes" class="btn btn-primary" >Top Mejores Clientes</a>
+
+            <div id="conteo-reservas" class="collapse"><br>
+                <div class="col-md-5">
+                    <label for="name"><b>Fecha de Inicio</b></label>
+                    <input type="date" class="form-control" id="beginDate" placeholder="YYYY-MM-DD">
+                </div>
+                <div class="col-md-5">
+                    <label for="name"><b>Fecha Fin</b></label>
+                    <input type="date" class="form-control" id="endDate" placeholder="YYYY-MM-DD">
+                </div><br>
+                <button type="button" onclick="listTotalReservation()" class="btn btn-outline-success">Filtrar</button><br>
+                <br><div class="col-md-5">
+                    <label for="name"><b>Total Reservas:</b></label>
+                    <input type="number" class="form-control" id="totalReservas" disabled>
+                </div><br>
+                </div>
+            
+            <div id="conteo-reservas-completadas-canceladas" class="collapse">
+                <br>
+                <div class="col-md-6">
+                    <label for="name"><b>Total Reservas Completadas:</b></label>
+                    <input type="text" class="form-control" id="totalCompleted" readonly disabled>
+                </div>
+                <div class="col-md-6">
+                    <label for="name"><b>Total Reservas Canceladas:</b></label>
+                    <input type="text" class="form-control" id="totalCancelled" readonly disabled>
+                </div><br>
+            </div>
+            
+            <div id="top-mejores-clientes" class="collapse">
+                <legend><b>Top Mejores Clientes</b></legend>
+                <div id="listado-clientes"></div>
+            </div>
+        </div>
+    </body>
+</html>
